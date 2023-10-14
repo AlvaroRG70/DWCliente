@@ -1,3 +1,5 @@
+//STRING
+
 /*
 1. Leer de teclado una serie de nombres hasta que aparezca la palabra "ULTIMO". Contar cuántos nombres se han leído, cuántos comienzan C y cuántos contienen la ñ.
 */
@@ -37,36 +39,255 @@ console.log(er.test(nombre_us))
 console.log(er2.test(nombre_us))
 console.log(nombre_us.replace(er3, '@'))
 */
+/*
+2. Con expresiones regulares, leer desde teclado una cadena con una serie de nombres. Contar cuántos nombres se han leído, cuántos comienzan C.
+*/
+/*
+var cadena = "hola si no carmen Claudia correa"
+er = /\b\w+\b/gi
+erC = /^C/gi
+var contador = 0
+var palabra = cadena.match(er)
+var numpal = palabra.length
+
+for (var i=0; i<numpal;i++){
+    erC.lastIndex = 0;
+    if (erC.test(palabra[i])){
+        contador ++
+    }
+}
+console.log(contador)
+*/
+
+/*
+3. Leer un texto de la entrada estándar y contar cuántas palabras tiene, cuántas de ellas empiezan por A. Suponemos que una palabra está separada de otra por uno o más espacios, un tabulador y el texto acaba con un punto, no existe ningún punto y aparte y las palabras son todas correctas.
+
+
+var texto = "hola si adios no  alvaro alberto luis"
+er = / /gi
+
+document.write(texto.match(er))
+*/
+
+/*
+4. Pedimos una cadena de texto que sabemos que puede contener paréntesis. Realiza un script que extraiga la cadena que se encuentra entre los paréntesis. Ejemplo: Si escribimos el texto “Hola (que) tal” se mostrará “que”. Si no existe el signo “(“ mostrará una cadena vacía y si existe el signo  “(“pero no el signo “)” mostrará desde el primer paréntesis hasta el final.
+*/
+/*
+var cadena = "hola (que tal (estas)"
+er = /\(\w+\)/gi
+document.write(cadena.match(er))
+*/
+
+/*
+5. Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
+*/
+/*
+var cadena = "hola que tal"
+var cadenafin = ""
+for (i = cadena.length - 1; i >= 0; i--){
+    var letra = cadena.charAt(i)
+    cadenafin = cadenafin.concat(letra)
+}
+console.log(cadenafin)
+*/
 
 
 /*
-2. Leer un texto de la entrada estándar y contar cuántas palabras tiene, cuántas de ellas empiezan por A. Suponemos que una palabra está separada de otra por uno o más espacios, un tabulador y el texto acaba con un punto, no existe ningún punto y aparte y las palabras son todas correctas.
+6. Hacer un programa en el que el usuario introduzca, nombre, profesión y edad separado por comas. Después el programa debe mostrar la edad del usuario por pantalla.
 */
-var texto = "hola si adios no alvaro alberto luis"
-er = /(\w+\s|\w+$)/
-console.log(texto.match(er))
+/*
+var cadena = "alvaro,programador,24"
+//er = /,[1-9]+/
+er = /\d+/
+console.log(cadena.match(er))
+*/
+
+/*
+7. Diseñar un script que lea una dirección de email y la valide. No se terminará hasta introducir una dirección correcta. Modificar el ejercicio anterior para una vez validado el correo mostrar el usuario y el servidor de correo en dos mensajes.
+*/
+/*
+var cadena = "rgalvaro70gmail.com"
+er = /\w+@\w+.\w+/
+console.log(er.test(cadena))
+*/
+
+/*
+8. Realizar un programa que compruebe si una palabra es palíndromo, es decir, si se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo: RADAR, ARA....
+*/
+
+
+/*
+9. Realiza un supertrim de una cadena, eliminando todos los espacios duplicados
+*/
+/*
+var cadena = "  hay   espacios  duplicados     suu"
+document.write(cadena.trim())
+*/
+
+/*
+10. Diseña un programa que indique el carácter más repetido dentro de una cadena de caracteres.
+
+
+var cadena = "alavama las naranjas"
+var contador = 0
+for (i = 0; i <= cadena.length; i++){
+    var letra = cadena.charAt(i)
+    for (a = 0; a <= cadena.length; a++){
+        if (letra == cadena.charAt(a)){
+            contador ++
+        }
+    }
+}
+*/
+
+/*
+14. Valida con una expresión regular el horario de formato de 24 hrs, por ejemplo 14:45 o 08:12
+*/
+/*
+var er = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
+var er2 = /^[0-2][0-9]:[0-5][0-9]$/
+var hora = "3:24"
+console.log(er2.test(hora))
+*/
+/*
+12. Realiza un programa que compruebe mediante expresiones regulares si un usuario ha introducido una matrícula de vehículo válida. Si el usuario añade la matrícula correctamente, formatea la cadena para que todas sean guardadas (imagina que luego se guardarán en una BBDD) de la misma forma, en mayúsculas y con un guión entre letras y números, por ejemplo: ABC-1234.
+*/
+/*
+var er = /^([A-Z]|[a-z])([A-Z]|[a-z])([A-Z]|[a-z])-[0-9][0-9][0-9][0-9]$/
+var matricula = "abc-1234"
+console.log(er.test(matricula))
+*/
+/*
+13. Diseña un programa que valide un código postal español, debe tener 5 números y el código postal «más alto» debería ser 52999. Es decir, no existe un código postal en España que empiece por 53 o superior.
+*/
+/*
+var er = /^[0-5][0-2][0-9][0-9][0-9]$/
+var postal = "53999"
+console.log(er.test(postal))
+*/
+
+/*
+15. Los números pueden tener entre 1 y 3 dígitos. Solicita el ingreso de la cordenada de un punto. El formato a ingresar por teclado es (999,999)
+*/
+/*
+er = /^\(\d{1,3},\d{1,3}\)$/
+cadena = "(99,999)"
+console.log(er.test(cadena))
+*/
 
 
 
 
+//MATH Y NUMBER
+
+/*
+Hacer un programa que muestre un menú de opciones con las siguientes operaciones posibles:
+    Redondeo a su inmediato superior de un número
+    Redondeo a su inmediato inferior de un número
+    Redondeo al número más cercano
+    Cálculo del número máximo entre dos dados
+    Cálculo del número mínimo entre dos dados
+    Cálculo de un número elevado a otro
+    Cálculo de la raíz cuadrada de un número
+*/
+
+/*
+var accion = prompt("escribe una accion")
+var n1 = prompt("escribe un numero")
+var n2 = prompt("escribe un numero")
+
+if (accion == "superior"){
+    console.log(Math.ceil(n1))
+
+}else if (accion == "inferior"){
+    console.log(Math.floor(n1))
+
+}else if (accion == "cercano"){
+    console.log(Math.round(n1))
+
+} else if (accion == "maximo"){
+    console.log(Math.max(n1,n2))
+
+} else if (accion == "minimo"){
+    console.log(Math.min(n1,n2))
+
+}else if (accion == "elevado"){
+    console.log(Math.pow(n1,n2))
+
+} else if (accion == "raiz"){
+    console.log(Math.sqrt(n1))
+
+} else {
+    console.log(false)
+}
+*/
+
+/*
+2. 
+*/
+/*
+var v = 14
+var g = 9.8
+var a = 45
+var r = (2*Math.pow(v,2)*Math.sin(a)*Math.cos(a))/g
+console.log(r)
+*/
+
+/*
+3.
+*/
+
+/*
+var t = prompt("escribe un numero")
+var y = 2*Math.exp(2)-0.5*t*Math.sin(0.5*t)
+while (t>=0 && t<=60) {
+    docum(y)
+    t = prompt("escribe un numero")
+}
+*/
+
+/*
+4. Generar aleatoriamente una quiniela de n columnas. Supóngase que las probabilidades son:
+    ➔ 50% para que salga 1
+    ➔ 30% para que salga x
+    ➔ 20% para que salga 2
+*/
+/*
+var numero = Math.random() 
+var n = 5
+for (i=1; i<=n; i++){
+    if (numero  >= 0 && numero < 0.5) {
+        console.log(1)
+    } else if(numero>=0.5 && numero<0.8){
+        console.log("X")
+    } else {
+        console.log(2)
+    }
+    numero = Math.random() 
+}
+*/
+
+/*
+5. Generar aleatoriamente una primitiva de n columnas.
+*/
+/*
+var numeros
+var primitiva
+var n = 5
+for (i=1; i<=n; i++){
+    numeros = Math.random()
+    primitiva = numeros*100
+    console.log(Math.round(primitiva))
+}
+*/   
+
+/*
+6. Realizar un programa que generalice el algoritmo del Tarot para un número de cualquier cantidad de cifras. Ejemplo: 999999999999999999999=9+.....9+9+9= 189 = 18 = 9.  (Pista: Usar log en base 10. No es obligatorio usarla)
+*/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//DATE
 
 
 
