@@ -286,8 +286,138 @@ for (i=1; i<=n; i++){
 */
 
 
-
 //DATE
+
+/*
+1. Hacer el Tarot que comprueba que la fecha de nacimiento, introducida no es mayor que la actual.
+*/
+
+var fecha_actual = new Date()
+var fecha = new Date("1999-03-26")
+if (fecha < fecha_actual){
+    console.log(true)
+} else {
+    console.log(false)
+}
+
+/*
+2. Escribe un algoritmo que lea desde la entrada estándar dos fechas dadas por día, mes y año y calcule cuál de ellas es anterior a la otra.
+*/
+var fecha1 = new Date("1995-05-23")
+var fecha2 = new Date("1939-03-26")
+if (fecha1 > fecha2) {
+    document.write(fecha2," es anterior a ",fecha1)
+} else {
+    document.write(fecha1," es anterior a ",fecha2)
+}
+
+
+/*
+3. Realiza un algoritmo que solicite del usuario un tiempo dado en segundos y calcule y presente en pantalla dicho tiempo pero expresado en horas, minutos y segundos.
+*/
+
+
+/*
+4. Calcular de un conjunto de fechas la menor, la mayor y la diferencia en segundos entre ambas.
+*/
+
+
+
+/*
+5. Realizar un programa que muestre cuántos días faltan para el próximo cumpleaños del usuario y muestre “¡Felicidades!” si es el día señalado.
+*/
+
+
+
+/*
+6. Realizar un programa que calcule los días de la semana en que caerán los próximos 50 cumpleaños del usuario.
+*/
+
+
+
+
+//BOM
+
+/*
+    1. En una nueva ventana, imprimir todas las propiedades del objeto navigator.
+
+    appName : almacena el nombre oficial del navegador.
+    appCodeName : devuelve el nombre de código de la aplicación del navegador:
+    appVersion : almacena la versión del navegador.
+    cookieEnabled : almacena si las cookies están activas en el navegador.
+    platform : almacena la plataforma donde el navegador se está ejecutando.
+    plugins : almacena un array de los plugin cargados en el navegador.
+    language devuelve el idioma del navegador.
+    onLine devuelve verdadero si el navegador está en línea.
+    javaEnabled() método devuelve verdadero si Java está habilitado.
+
+*/
+/*
+document.write("appName: "+ navigator.appName + "<br>")   
+document.write("appCodeName: "+ navigator.appCodeName + '<br>')   
+document.write("appVersion: " + navigator.appVersion + "<br>" )
+document.write("coockieEnabled: " + navigator.cookieEnabled + "<br>")
+document.write("plugins: " + navigator.plugins.length + "<br>")
+document.write("languaje: " + navigator.language + "<br>")
+document.write('onLine :' + navigator.onLine + '<br>')
+document.write('javaEnabled() :' + navigator.javaEnabled() + '<br>')
+*/
+
+
+/*
+2. Escribir un script que mostrará el nombre del navegador , la versión y el sistema operativo que esté utilizando. Prueba tu programa en distintos navegadores, el objeto Navigator no está estandarizado.
+*/
+
+var navInfo = window.navigator.appVersion.toLowerCase()
+var so = 'Sistema Operativo'
+function retornarSO()
+{
+	if(navInfo.indexOf('win') != -1)
+	{
+		so = 'Windows'
+	}
+	else if(navInfo.indexOf('linux') != -1)
+	{
+		so = 'Linux'
+	}
+	else if(navInfo.indexOf('mac') != -1)
+	{
+		so = 'Macintosh'
+	}
+	return so
+}
+
+document.write(navigator.appName + "<br>")
+document.write(navigator.appVersion + "<br>")
+document.write(retornarSO())
+
+
+/*
+3. Crear dos enlaces, uno para abrir una nueva ventana y uno para cerrarla. La nueva ventana mostrará este mensaje en una fuente grande : ​”El ojo es la ventana a tu alma “. La nueva ventana se coloca en la esquina izquierda de la pantalla , será redimensionable , tendrá una barra de desplazamiento, y estará en primer plano.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
