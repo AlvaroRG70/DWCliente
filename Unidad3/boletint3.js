@@ -291,7 +291,7 @@ for (i=1; i<=n; i++){
 /*
 1. Hacer el Tarot que comprueba que la fecha de nacimiento, introducida no es mayor que la actual.
 */
-
+/*
 var fecha_actual = new Date()
 var fecha = new Date("1999-03-26")
 if (fecha < fecha_actual){
@@ -299,10 +299,11 @@ if (fecha < fecha_actual){
 } else {
     console.log(false)
 }
-
+*/
 /*
 2. Escribe un algoritmo que lea desde la entrada estándar dos fechas dadas por día, mes y año y calcule cuál de ellas es anterior a la otra.
 */
+/*
 var fecha1 = new Date("1995-05-23")
 var fecha2 = new Date("1939-03-26")
 if (fecha1 > fecha2) {
@@ -311,29 +312,67 @@ if (fecha1 > fecha2) {
     document.write(fecha1," es anterior a ",fecha2)
 }
 
-
+*/
 /*
 3. Realiza un algoritmo que solicite del usuario un tiempo dado en segundos y calcule y presente en pantalla dicho tiempo pero expresado en horas, minutos y segundos.
+*/
+/*
+var tiempo = prompt("escribe un tiempo en segundos")
+var horas = parseInt(tiempo/3600)
+var minutos = parseInt(tiempo/60)
+document.write(horas,":",minutos,":",tiempo)
 */
 
 
 /*
 4. Calcular de un conjunto de fechas la menor, la mayor y la diferencia en segundos entre ambas.
 */
+/*
+var fecha1 = new Date("1995-05-23")
+var fecha2 = new Date("1939-03-26")
+if (fecha1 > fecha2) {
+    //document.write(fecha2," es anterior a ",fecha1)
+    //var fecha = fecha1 - fecha2
+    var fecha = fecha1.getTime() - fecha2.getTime()
+    document.write(fecha)
+} else {
+    //document.write(fecha1," es anterior a ",fecha2)
+    //var fecha = fecha2 - fecha1
+    var fecha = (fecha2.getTime() - fecha1.getTime())/1000
+    document.write(fecha)
+}
 
-
+*/
 
 /*
 5. Realizar un programa que muestre cuántos días faltan para el próximo cumpleaños del usuario y muestre “¡Felicidades!” si es el día señalado.
 */
-
+/*
+var fecha = prompt("escribe tu cumpleaños")
+var cumple = new Date(fecha)
+var dia = new Date()
+if (cumple == dia) {
+    document.write("¡Felicidades!")
+} else {
+    var diferencia = cumple.getTime() - dia.getTime()
+    var dias = (diferencia / (1000 * 60 * 60 * 24))
+    document.write(dias)
+}
+*/
 
 
 /*
 6. Realizar un programa que calcule los días de la semana en que caerán los próximos 50 cumpleaños del usuario.
 */
-
-
+/*
+var fecha = new Date("2000-03-26")
+var contador = 0
+while (contador < 50) {
+    console.log(fecha.getDay())
+    fecha.setFullYear(fecha.getFullYear()+1)
+    contador++
+}
+*/
 
 
 //BOM
@@ -367,7 +406,7 @@ document.write('javaEnabled() :' + navigator.javaEnabled() + '<br>')
 /*
 2. Escribir un script que mostrará el nombre del navegador , la versión y el sistema operativo que esté utilizando. Prueba tu programa en distintos navegadores, el objeto Navigator no está estandarizado.
 */
-
+/*
 var navInfo = window.navigator.appVersion.toLowerCase()
 var so = 'Sistema Operativo'
 function retornarSO()
@@ -390,7 +429,7 @@ function retornarSO()
 document.write(navigator.appName + "<br>")
 document.write(navigator.appVersion + "<br>")
 document.write(retornarSO())
-
+*/
 
 /*
 3. Crear dos enlaces, uno para abrir una nueva ventana y uno para cerrarla. La nueva ventana mostrará este mensaje en una fuente grande : ​”El ojo es la ventana a tu alma “. La nueva ventana se coloca en la esquina izquierda de la pantalla , será redimensionable , tendrá una barra de desplazamiento, y estará en primer plano.
