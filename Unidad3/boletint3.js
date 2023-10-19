@@ -318,8 +318,9 @@ if (fecha1 > fecha2) {
 */
 /*
 var tiempo = prompt("escribe un tiempo en segundos")
-var horas = parseInt(tiempo/3600)
-var minutos = parseInt(tiempo/60)
+var segundos = parseInt(tiempo)
+var minutos = 
+var horas = 
 document.write(horas,":",minutos,":",tiempo)
 */
 
@@ -341,7 +342,6 @@ if (fecha1 > fecha2) {
     var fecha = (fecha2.getTime() - fecha1.getTime())/1000
     document.write(fecha)
 }
-
 */
 
 /*
@@ -435,7 +435,20 @@ document.write(retornarSO())
 3. Crear dos enlaces, uno para abrir una nueva ventana y uno para cerrarla. La nueva ventana mostrará este mensaje en una fuente grande : ​”El ojo es la ventana a tu alma “. La nueva ventana se coloca en la esquina izquierda de la pantalla , será redimensionable , tendrá una barra de desplazamiento, y estará en primer plano.
 */
 
+let miVentana; // Variable para almacenar la referencia a la ventana abierta
 
+// Función para abrir una nueva ventana
+document.getElementById('abrirVentana').addEventListener('click', function() {
+    miVentana = window.open('', '_blank', 'width=400,height=200');
+    miVentana.document.write('<p>Esta es una ventana emergente.</p>');
+});
+
+// Función para cerrar la ventana abierta
+document.getElementById('cerrarVentana').addEventListener('click', function() {
+    if (miVentana) {
+        miVentana.close();
+    }
+});
 
 
 
