@@ -15,7 +15,7 @@ while (nombre.toUpperCase() != "ULTIMO") {
         contadorC ++
     } 
     if (nombre.match("ñ") != null){
-        contadorñ ++
+        contador ++
     }
 
     nombre = prompt("Escribe otro nombre o ultimo para terminar")

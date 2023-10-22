@@ -4,9 +4,22 @@
 	<title>Apertura y Cierre de Ventanas</title>
 	<script type="text/javascript" src="BOM.js"></script>
 </head>
-<body>
-    <h1>El ojo es la ventana </h1>
-    <a></a>
-    <a></a>
+<body onLoad="inicializar()">
+<!--
+    <h1>Abrir/cerrar ventana</h1>
+    <button><a href="javascript:void(0);" onclick="AbrirVentana();">Abrir Ventana</a></button>
+    <button><a href="javascript:void(0);" onclick="CerrarVentana();">Cerrar Ventana</a></button>
+-->
+    <h1>Abrir/cerrar ventana</h1>
+    <button><a href="javascript:void(0);" onclick="AbrirVentanaFlotante();">Abrir Ventana</a></button>
+    <button><a href="javascript:void(0);" onclick="CerrarVentanaFlotante();">Cerrar Ventana</a></button>
+
+    <h1>Dar/quitar foco</h1>
+    <button><a href="javascript:void(0);" onclick="DarFoco();">Dar foco</a></button>
+    <button><a href="javascript:void(0);" onclick="QuitarFoco();">quitar foco</a></button>
+
+    <h1>scrool absoluto/relativo</h1>
+    <button><a href="javascript:void(0);" onclick="ScrollAbsoluto();">scrool absoluto</a></button>
+    <button><a href="javascript:void(0);" onclick=" ScrollRelativo();">scrool relativo</a></button>
 </body>
 </html>

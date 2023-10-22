@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control de Ventanas</title>
+</head>
+<body>
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+    <button onclick="abrirVentanaDetener()">Abrir y Detener Ventana</button>
+    <button onclick="cerrarVentana()">Cerrar Ventana</button>
+    <button onclick="darFoco()">Dar Foco</button>
+    <button onclick="quitarFoco()">Quitar Foco</button>
+    <button onclick="scrollAbsoluto()">Scroll Absoluto (0, 1000)</button>
+    <button onclick="scrollRelativo()">Scroll Relativo (0, 10)</button>
+
+    <script>
+        let ventanaFlotante;
+
+        function abrirVentana() {
+            ventanaFlotante = window.open('ventana_flotante.html', 'VentanaFlotante', 'width=400,height=300');
+            ventanaFlotante.document.write('<h1>Esto es una ventaba flotante</h1>')
+        }
+
+        function abrirVentanaDetener() {
+            ventanaFlotante = window.open('ventana_flotante.html', 'VentanaFlotante', 'width=400,height=300');
+            setTimeout(() => {
+                ventanaFlotante.close();
+            }, 5000); // Cerrar la ventana después de 5 segundos
+        }
+
+        function cerrarVentana() {
+            if (ventanaFlotante) {
+                ventanaFlotante.close();
+            }
+        }
+
+        function darFoco() {
+            if (ventanaFlotante) {
+                ventanaFlotante.focus();
+            }
+        }
+
+        function quitarFoco() {
+            if (ventanaFlotante) {
+                ventanaFlotante.blur();
+            }
+        }
+
+        function scrollAbsoluto() {
+            if (ventanaFlotante) {
+                ventanaFlotante.scrollTo(0, 1000);
+            }
+        }
+
+        function scrollRelativo() {
+            if (ventanaFlotante) {
+                ventanaFlotante.scrollBy(0, 10);
+            }
+        }
+    </script>
+
+</body>
+</html>

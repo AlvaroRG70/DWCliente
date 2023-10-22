@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reloj Digital</title>
+</head>
+<body>
+
+<script>
+function actualizarTitulo() {
+    var fecha = new Date();
+    var horas = fecha.getHours().toString().padStart(2, '0'); // Agregar ceros iniciales si es necesario
+    var minutos = fecha.getMinutes().toString().padStart(2, '0');
+    var segundos = fecha.getSeconds().toString().padStart(2, '0');
+    var nuevoTitulo = horas + ':' + minutos + ':' + segundos;
+    document.title = nuevoTitulo;
+}
+
+// Actualizar el título cada minuto (60,000 milisegundos)
+setInterval(actualizarTitulo, 1000); // 1000 ms = 1 segundo
+</script>
+
+</body>
+</html>
