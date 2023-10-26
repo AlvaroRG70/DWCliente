@@ -63,7 +63,7 @@ console.log(contador)
 3. Leer un texto de la entrada estándar y contar cuántas palabras tiene, cuántas de ellas empiezan por A. Suponemos que una palabra está separada de otra por uno o más espacios, un tabulador y el texto acaba con un punto, no existe ningún punto y aparte y las palabras son todas correctas.
 
 
-var texto = "hola si adios no  alvaro alberto luis"
+var texto = "hola si adios no  alvaro alberto "
 er = / /gi
 
 document.write(texto.match(er))

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Animado Circular</title>
+</head>
+<body>
+    <h1>Texto Animado Circular</h1>
+    <p id="animated-text">¡¡Sólo quedan 20 días de ofertas!!</p>
+
+    <script>
+        const textElement = document.getElementById("animated-text");
+        let text = "¡¡Sólo quedan 20 días de ofertas!!";
+        let index = 0;
+
+        function animateText() {
+            text = text.slice(1) + text[0];
+            textElement.textContent = text;
+        }
+
+        setInterval(animateText, 1000);
+    </script>
+</body>
+</html>
