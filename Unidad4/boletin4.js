@@ -223,3 +223,9 @@ let sumaArgPares2 = (...argumentos) => {
     }
     console.log(suma)
 }
+
+
+/*
+10. Refactoriza el siguiente código usando funciones flecha.
+*/
+
