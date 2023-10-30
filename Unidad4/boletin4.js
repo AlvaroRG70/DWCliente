@@ -147,10 +147,13 @@ function elMenor(...argumento) {
 
 elMenor(2,1,4,5,0)
 
-let elMenor2 = (...argumento) => {
+let elMenor3 = (...argumento) => {
     console.log(Math.min(...argumento))
 }
 
+let elMenor2 = (...argumento) =>  Math.min(...argumento)
+
+console.log(elMenor2(2,1,2,3,4))
 /*
 b. Escribe una función llamada colocaEnMedio que acepte como parámetros dos arrays y devuelva el primer array con todos los valores del segundo array colocados en el centro del primer array. 
 */
@@ -224,8 +227,20 @@ let sumaArgPares2 = (...argumentos) => {
     console.log(suma)
 }
 
-
 /*
 10. Refactoriza el siguiente código usando funciones flecha.
 */
+
+
+const array = [6,2,3,4,50]
+for (let item of array) {
+    console.log(item)
+}
+
+
+
+
+
+
+
 
