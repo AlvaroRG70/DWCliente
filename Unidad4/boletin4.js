@@ -230,7 +230,77 @@ let sumaArgPares2 = (...argumentos) => {
 /*
 10. Refactoriza el siguiente código usando funciones flecha.
 */
+/*
+a. Asegúrate de que la función se llama tripleAndFilter.
+*/
 
+function tripleAndFilter2(arr){
+    return arr.map(function(value){
+            return value * 3;
+         }).filter(function(value){
+           return value % 5 === 0;
+      })
+}
+
+let tripleAndFilter = (arr) => {
+    return arr.map((value) => {
+        return value * 3
+    }).filter((value) => {
+        return value % 5 ===0
+    })
+}
+
+console.log(tripleAndFilter([1,2,3,10,5,6]))
+
+/*
+b. 
+*/
+
+function doubleOddNumbers2(arr){
+    return arr.filter(function(val){
+        return val % 2 !== 0;
+    }).map(function(val){
+        return val *2;
+    })
+}
+
+let doubleOddNumbers = (array) => {
+    return array.filter((val) => {
+        return val % 2 !== 0
+    }).map((val) => {
+        return val * 2
+    })
+}
+
+console.log(doubleOddNumbers([1,2,3,4,5,6,7]))
+
+/*
+c. 
+*/
+
+function bar2(){ 
+    let txt = ''; 
+    for(let i in arguments){ 
+    txt += arguments[i];
+    } 
+    return txt;
+}
+
+let bar = (...arguments) => {
+    let txt = ""
+    for (let i in arguments){
+        txt += arguments[i]
+    }
+}
+
+console.log(bar(1,2,3,4,5))
+
+
+
+
+
+
+//prueba
 
 const array = [6,2,3,4,50]
 for (let item of array) {
@@ -240,7 +310,162 @@ for (let item of array) {
 
 
 
+/*
+11. Dada una cadena leída por teclado, realizar un programa que extraiga los números que aparecen en dicha secuencia e imprima por pantalla dichos números y su suma. 
+*/
+
+let extraNum = (cadena) => {
+    let er = /[0-9]/gm
+    let listanum = cadena.match(er)
+    let suma = 0
+    console.log(listanum)
+    for (let i of listanum){
+        suma += parseInt(i)
+    }
+    console.log(suma)
+}
+
+extraNum("hola 2 sfbs 2 3 fdjsf 4")
+
+
+/*
+13. Realizar una función que rellene un matriz de orden N de número aleatorios. 
+*/
 
 
 
+let matriz = (orden) => {
+    let matriz = []
+    for (let i = 0; i < orden; i++) {
+        let fila = []
+        for (let a = 0; a < orden; a++) {
+            let random = Math.floor(Math.random() * 100)
+            fila.push(random)
+        }
+        matriz.push(fila)
+    }
+    console.log(matriz)
+    return matriz
+}
 
+matriz(4)
+
+/*
+14. Realizar un programa que permita introducir 2 matrices (hasta tamaño 3x3), y nos de la opción de sumarlas o multiplicarlas. El programa imprimirá las dos matrices y la matriz resultante (si la hubiera). 
+*/
+
+let sumaMatriz = (matriz1, matriz2) => {
+    let orden = matriz1.length
+    let matriznueva = []
+    for (let a = 0; a < orden; a++) {
+        let fila = []
+        suma = 0
+        for (let b = 0; b < orden; b++) {
+            suma += matriz1[a][b] + matriz2[a][b]
+            fila.push(suma)
+        }
+        matriznueva.push(fila)
+    }
+    return matriznueva
+}
+
+
+let productoMatriz = (matriz1, matriz2) => {
+    let orden = matriz1.length
+    let matriznueva = []
+    for (let a = 0; a < orden; a++) {
+        let fila = []
+        let suma = 0
+        for (let b = 0; b < orden; b++) {
+            suma += matriz1[a][b] * matriz2[b][a]
+            fila.push(suma)
+        }
+    matriznueva.push(fila)
+    }
+    return matriznueva
+}
+
+
+let operacionMatriz = (operacion, matriz1, matriz2) => {
+    if (operacion.toUpperCase() == "SUMA"){
+        console.log(matriz1)
+        console.log(matriz2)
+        console.log(sumaMatriz(matriz1, matriz2))
+    } else if (operacion.toUpperCase() == "PRODUCTO"){
+        console.log(matriz1)
+        console.log(matriz2)
+        console.log(productoMatriz(matriz1, matriz2))
+    } else {
+        console.log(false)
+    }
+}
+mat1 = matriz(3)
+mat2 = matriz(3)
+operacionMatriz("suma",mat1,mat2 )
+operacionMatriz("producto",mat1,mat2 )
+
+/*
+17. Realizar un script que tome una serie de palabras ingresadas por el usuario (separadas por coma) y almacena esas palabras en un array. Posteriormente, manipule el array para mostrar en una nueva ventana los siguientes datos: 
+    La primera palabra ingresada por el usuario 
+    La última palabra ingresada por el usuario
+    El número de palabras presentes en el array
+    Todas las palabras ordenadas alfabéticamente 
+*/
+
+let palabrasSeparadas = (cadena) => {
+    let array = cadena.split(",")
+    let primerapalabra = array[0]
+    let numeropal = array.length
+    let ultimapalabra = array[numeropal - 1]
+    let ordenadas = array.sort()
+
+    console.log(primerapalabra)
+    console.log(numeropal)
+    console.log(ultimapalabra)
+    console.log(ordenadas)
+
+}
+
+
+palabrasSeparadas("hola,eres,alvaro,si,no")
+
+
+/*
+18. Resolver el problema del cambio (devolución mínima de monedas y billetes) utilizando arrays, evitando la duplicidad de estructuras de control alternativo. 
+*/
+
+let cambioMoneda = (cantidad, listacambio) => {
+    cambio = []
+    for (i = 0; i < listacambio.length; i++) {
+        while (cantidad>=listacambio[i]) {
+            cambio.push(listacambio[i])
+            cantidad -= listacambio[i]
+        }
+    }
+    console.log(cambio)
+}
+
+cambioMoneda(2542,[500,200,100,50,20,10,5,2,1])
+
+/*
+19. Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta que el usuario introduzca la cadena vacía. El programa debe guardar los datos en un array bidimensional.
+*/
+
+let datosUsuario = (cadena = prompt("introduzca datos separado por comas")) => {
+    while (cadena =! "" ) {
+        let arrayfinal = []
+        let datos = cadena.split(",")
+        arrayfinal.push(datos)
+        cadena = prompt("introduzca datos separado por comas")
+    }
+    console.log(arrayfinal)
+    return arrayfinal
+}
+
+/*
+20. Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda? 
+*/
+
+let busquedaPersona = (busqueda) => {
+
+}
