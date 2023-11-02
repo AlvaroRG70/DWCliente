@@ -451,9 +451,9 @@ cambioMoneda(2542,[500,200,100,50,20,10,5,2,1])
 19. Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta que el usuario introduzca la cadena vacía. El programa debe guardar los datos en un array bidimensional.
 */
 
-let datosUsuario = (cadena = prompt("introduzca datos separado por comas")) => {
-    while (cadena =! "" ) {
-        let arrayfinal = []
+let datosUsuario = (cadena) => {
+    let arrayfinal = []
+    while (cadena != "" ) {
         let datos = cadena.split(",")
         arrayfinal.push(datos)
         cadena = prompt("introduzca datos separado por comas")
@@ -462,10 +462,34 @@ let datosUsuario = (cadena = prompt("introduzca datos separado por comas")) => {
     return arrayfinal
 }
 
+let cadena1 = prompt("introduzca datos separado por comas")
+datosUsuario(cadena1)
+
 /*
-20. Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda? 
+20. Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda?
 */
 
-let busquedaPersona = (busqueda) => {
 
+let imprimirDatos = (datos) => {
+    for (let i of datos)
+        document.write(datos[i] + " ")
+}
+
+let buscarPersonaAp = (apellido, array) => {
+    let long = array.length
+    for (i = 0; i<long; i++) {
+        if (array[i][1] == apellido){
+            imprimirDatos(array[i])
+        }
+    }
+}
+buscarPersonaAp("Caro", cadena1)
+
+
+let buscarPersonaDN = (dni) => {
+    
+}
+
+let buscarPersonaEdad = (edad) => {
+    
 }
