@@ -472,24 +472,68 @@ datosUsuario(cadena1)
 
 let imprimirDatos = (datos) => {
     for (let i of datos)
-        document.write(datos[i] + " ")
+        document.write(i + " ")
 }
 
-let buscarPersonaAp = (apellido, array) => {
-    let long = array.length
-    for (i = 0; i<long; i++) {
-        if (array[i][1] == apellido){
-            imprimirDatos(array[i])
+
+buscarPersonaAp = (apellido,array) => array.find((persona) => persona[1]==apellido)
+
+buscarPersonaDN = (dni,array) => array.find((persona) => persona[2]==dni)
+
+let edad = (fecha) => {
+    let fecha1 = new Date(fecha)
+    let actual = new Date()
+    let miliseg = actual - fecha1
+    let anyo = Math.floor(miliseg/(1000 * 60 * 60 * 24 * 365.25))
+    return anyo
+}
+
+buscarPersonaEdad = (edad,array) => array.find((persona) => edad(persona[3])==edad)
+
+
+/*
+21. Añade al ejercicio anterior las siguientes funciones, utiliza además las funciones creadas anteriormente (utiliza los métodos ya implementados de Array y funciones flecha):
+*/
+
+/*
+a. mayorEdad: filtrará del array los usuarios mayores de edad e imprimirá sus datos en una nueva ventana.
+*/
+let mayorEdad = (array) => {
+    for (let i of array) {
+        if (edad(i[3]) >= 18){
+            console.log(i)
         }
     }
 }
-buscarPersonaAp("Caro", cadena1)
 
-
-let buscarPersonaDN = (dni) => {
-    
+/*
+b. menorEdad: filtrará del array los usuarios menores de edad e imprimirá en una nueva ventana los días y/o años que le quedan para su mayoría de edad.
+*/
+let menor = (array) => {
+    for (let i of array) {
+        if (edad(i[3]) < 18){
+            let anyos = 18 - edad(i[3])
+            console.log(anyos)
+        }
+    }
 }
 
-let buscarPersonaEdad = (edad) => {
-    
+/*
+c. modificaDatos: solicitará qué datos modificar, el dato por el que se va a modificar y el dni del usuario.
+*/
+
+let modificaDatos = (datoacambiar, valor, array) => {
+    if (datoacambiar = "Nombre") {
+        
+    } else if (datoacambiar = "Apellido") {
+
+    } else if (datoacambiar = "DNI") {
+
+    } else{
+
+    }
 }
+
+/*
+d. eliminaUsuario: elimina un usuario del array solicitando su dni. Además solicita confirmación antes de eliminar. 
+*/
