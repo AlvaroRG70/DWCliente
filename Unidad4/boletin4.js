@@ -537,3 +537,4 @@ let modificaDatos = (datoacambiar, valor, array) => {
 /*
 d. eliminaUsuario: elimina un usuario del array solicitando su dni. Además solicita confirmación antes de eliminar. 
 */
+
