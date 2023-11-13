@@ -48,5 +48,19 @@ let claves3 = modulos.keys()
 for (let c of claves3){
     lista.push(c)
 }
-let listaord = lista.sort()
+
 console.log(lista)
+let listaord = lista.sort()
+console.log(listaord)
+
+//No ordena números bien
+let lista2 = [2,"1","a","d",4, "b",3]
+console.log(lista2.sort())
+
+//ordena números de menor a mayor
+let lista3 = [3,44,33,66,675,1,10]
+console.log(lista3.sort((a,b)=>a-b))
+
+//ordena números de mayor a menor
+let lista4 = [3,44,33,66,675,1,10]
+console.log(lista4.sort((a,b)=>b-a))
