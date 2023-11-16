@@ -478,7 +478,7 @@ let imprimirDatos = (datos) => {
 
 buscarPersonaAp = (apellido,array) => array.find((persona) => persona[1]==apellido)
 
-buscarPersonaDN = (dni,array) => array.find((persona) => persona[2]==dni)
+buscarPersonaDNI = (dni,array) => array.find((persona) => persona[2]==dni)
 
 let edad = (fecha) => {
     let fecha1 = new Date(fecha)
@@ -538,3 +538,8 @@ let modificaDatos = (datoacambiar, valor, array) => {
 d. eliminaUsuario: elimina un usuario del array solicitando su dni. Además solicita confirmación antes de eliminar. 
 */
 
+let eliminaUsuario = (dni, array) => {
+    if (buscarPersonaDNI(dni,array)){
+        if ()
+    }
+}
