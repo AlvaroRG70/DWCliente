@@ -9,4 +9,6 @@ class Persona {
         let cadena = this.nombre + " " + this.apellido + " " + this.dni + " " + this.fechanac
         return cadena
     }
+
 }
+
