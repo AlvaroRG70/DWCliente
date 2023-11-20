@@ -1,6 +1,6 @@
 
 class Alumno extends Persona{
-    constructor(curso, notas){
+    constructor(nombre,apellido,dni,fechanac ,curso, notas){
         super(nombre,apellido,dni,fechanac)
         this.curso = curso
         this.notas = notas
@@ -28,11 +28,13 @@ class Alumno extends Persona{
         }
         let mayornota = Math.max(...listanotas)
         for (let nota of this.notas.values){
+            let listamayores = []
             if (mayornota == nota){
                 let asignatura = this.notas.keys
-                return asignatura
+                listamayores.push(asignatura)
             }
         }
+        return listamayores
     }
 }
 

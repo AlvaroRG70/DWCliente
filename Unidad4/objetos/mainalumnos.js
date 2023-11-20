@@ -19,7 +19,7 @@ let buscarApellido = (apellido, array) => {
     }
 }
 
-console.log(persona1.nombre)
+//console.log(persona1.nombre)
 // buscamos persona por DNI
 buscarPersonaDNI = (dni,array) => array.find((persona) => persona[2]==dni)
 
@@ -50,7 +50,23 @@ let buscarEdad = (edad,array) => {
 }
 
 //Crear un objeto Aula que contenga los alumnos de un aula y tenga los siguientes métodos:
-let alumno1 = new Alumno("Alberto", "Caro", "49144317A", "1979-04-24", "1"
+
+let alumno1 = new Alumno("Alberto", "Caro", "49144317A", "1979-04-24", "1", "primero", new Map([["DWC",7],["DWS",8],["DI",5]]))
+let alumno2 = new Alumno("Alvaro", "Rodriguez", "49166317E", "1999-03-26", "segundo", new Map([["DWC",5],["DWS",8],["DI",6]]))
+let alumno3 = new Alumno("Luis", "Vazquez", "39166317U", "2000-11-14", "segundo", new Map([["DWC",4],["DWS",7],["DI",5]]))
+let alumno4 = new Alumno("Elvis", "maro", "382736483R", "1999-03-26", "segundo", new Map([["DWC",5],["DWS",6],["DI",5]]))
+console.log(alumno1.imprimirAlumno)
 
 
-let Aula = 
+
+/*
+let listaalumnos = [alumno1,alumno2,alumno3,alumno4]
+
+let aula1 = new Aula(listaalumnos)
+console.log(aula1.buscarAlumno2("Alberto"))
+*/
+
+
+
+
+
