@@ -64,3 +64,14 @@ console.log(lista3.sort((a,b)=>a-b))
 //ordena números de mayor a menor
 let lista4 = [3,44,33,66,675,1,10]
 console.log(lista4.sort((a,b)=>b-a))
+
+
+
+
+    
+
+let map1 = new Map([["DWC",7],["DWS",8],["DI",5]])
+let notas = [...map1.values()]
+for (let nota of notas){
+    console.log(nota)
+}

@@ -50,12 +50,16 @@ let buscarEdad = (edad,array) => {
 }
 
 //Crear un objeto Aula que contenga los alumnos de un aula y tenga los siguientes métodos:
+let map1 = new Map([["DWC",7],["DWS",8],["DI",5]])
+console.log(map1.values())
+
+
 
 let alumno1 = new Alumno("Alberto", "Caro", "49144317A", "1979-04-24", "1", "primero", new Map([["DWC",7],["DWS",8],["DI",5]]))
 let alumno2 = new Alumno("Alvaro", "Rodriguez", "49166317E", "1999-03-26", "segundo", new Map([["DWC",5],["DWS",8],["DI",6]]))
 let alumno3 = new Alumno("Luis", "Vazquez", "39166317U", "2000-11-14", "segundo", new Map([["DWC",4],["DWS",7],["DI",5]]))
 let alumno4 = new Alumno("Elvis", "maro", "382736483R", "1999-03-26", "segundo", new Map([["DWC",5],["DWS",6],["DI",5]]))
-console.log(alumno1.imprimirAlumno)
+console.log(alumno1.imprimirAlumno())
 
 
 

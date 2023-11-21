@@ -1,19 +1,26 @@
 
 class Alumno extends Persona{
-    constructor(nombre,apellido,dni,fechanac ,curso, notas){
+    constructor(nombre,apellido,dni,fechanac,curso, notas){
         super(nombre,apellido,dni,fechanac)
         this.curso = curso
         this.notas = notas
     }
     imprimirAlumno(){
-        let cadena = this.nombre + " " + this.apellido + " " + this.dni + " " + this.fechanac + " " + this.curso + " " + this.notas 
+
+        var misnotas = ""
+        this.notas.forEach((value, key) => {
+            misnotas += key + "=" + value + "<br>"
+        });
+        let cadena = this.nombre + " " + this.apellido + " " + this.dni + " " + this.fechanac + " " + this.curso + " " + misnotas
         return cadena
     }
-
+  
     notaMedia(){
         let contador = 0
         let sumanotas = 0
-        for (let nota of this.notas.values){
+        let notaslista = [...this.notas.values()]
+
+        for (let nota of notaslista){
             sumanotas += nota
             contador += 1
         }
@@ -22,15 +29,12 @@ class Alumno extends Persona{
     }
 
     notaMaxima(){
-        let listanotas = []
-        for (let nota of this.notas.values){
-            listanotas.push(nota)
-        }
+        let listanotas = [...this.notas.values()]
         let mayornota = Math.max(...listanotas)
-        for (let nota of this.notas.values){
+        for (let nota of this.notas.values()){
             let listamayores = []
             if (mayornota == nota){
-                let asignatura = this.notas.keys
+                let asignatura = this.notas.keys()
                 listamayores.push(asignatura)
             }
         }
@@ -38,3 +42,4 @@ class Alumno extends Persona{
     }
 }
 
+ 
