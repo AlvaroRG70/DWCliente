@@ -9,7 +9,7 @@ class Alumno extends Persona{
 
         var misnotas = ""
         this.notas.forEach((value, key) => {
-            misnotas += key + "=" + value + "<br>"
+            misnotas += key + "=" + value + ", "
         });
         let cadena = this.nombre + " " + this.apellido + " " + this.dni + " " + this.fechanac + " " + this.curso + " " + misnotas
         return cadena
@@ -29,12 +29,13 @@ class Alumno extends Persona{
     }
 
     notaMaxima(){
+
         let listanotas = [...this.notas.values()]
         let mayornota = Math.max(...listanotas)
-        for (let nota of this.notas.values()){
-            let listamayores = []
+        let listamayores = []
+        for (let [asignatura, nota] of this.notas){
+            console.log(asignatura)
             if (mayornota == nota){
-                let asignatura = this.notas.keys()
                 listamayores.push(asignatura)
             }
         }
