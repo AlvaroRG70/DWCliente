@@ -12,31 +12,32 @@ class Aula{
 
     }
 
-    buscarAlumno2(dni){
-        return this.alumnos.find((alumno)=>alumno.dni == dni)
+    buscarAlumno2(nombre){
+        return this.alumnos.find((alumno)=>alumno.nombre == nombre)
     }
 
     //ordenar por nota para un alumno en particular
-    ordenarNota(alumnoobj){
-        let alumno = this.alumnos.find((al)=> al.nombre == alumnoobj)
-        let notasalumno = []
-        for (let nota of alumno.notas.values){
-            notasalumno.push(nota)
-        }
-        let notasordenadas = notasalumno.sort((a, b) => a.localeCompare(b))
-        return notasordenadas
+    ordenarNota(nombrealumno){
+        let alumno = this.alumnos.find((al)=> al.nombre == nombrealumno)
+        let listanotas = [...alumno.notas.values()]
+        let notasalumno = listanotas.sort((b, a) => {return a - b})
+        return notasalumno
     }
 
     //ordenar el array de alumnos por apellido
     ordenarApellidos(){
         let apellidosordenados = this.alumnos.sort((a, b) => a.apellido.localeCompare(b.apellido))
-        return apellidosordenados
+        let lista = []
+        for (let alumno of apellidosordenados){
+            lista.push(alumno.imprimirAlumno())
+        }
+        return lista
     }
 
     //imprimir los alumnos de un aula. 
 
     imprimirAlumnosAula(){
-        for (let alumno of alumnos){
+        for (let alumno of this.alumnos){
             document.write(alumno.imprimirAlumno())
         }
     }
