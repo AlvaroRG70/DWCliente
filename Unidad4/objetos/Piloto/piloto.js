@@ -1,9 +1,6 @@
-class Calificacion{
-    constructor(piloto, tiempo){
-        this.piloto = piloto
-        this.tiempo = tiempo
-    }
-    imprimirCalificacion(){
-        
+class Piloto{
+    constructor(nombre, escuderia){
+        this.nombre = nombre
+        this.escuderia = escuderia
     }
 }

@@ -1,10 +1,16 @@
-let piloto1 = new Calificacion({nombre: "Alvaro", escuderia: "Ferrari"}, 1000)
-let piloto2 = new Calificacion({nombre: "Alberto", escuderia: "Renault"}, 3000)
-let piloto3 = new Calificacion({nombre: "Ivan", escuderia: "Mclaren"}, 2000)
-let piloto4 = new Calificacion({nombre: "Elvis", escuderia: "Alpine"}, 4000)
+let piloto1 = new Piloto("Alvaro","Ferrari")
+let piloto2 = new Piloto("Alberto", "Renault")
+let piloto3 = new Piloto("Ivan","Mclaren")
+let piloto4 = new Piloto("Elvis", "Alpine")
 
-let listapilotos = [piloto1,piloto2,piloto3,piloto4]
-console.log(piloto1.piloto.nombre)
+
+let calificacion1 = new Calificacion(piloto1, 1000)
+let calificacion2 = new Calificacion(piloto2, 3000)
+let calificacion3 = new Calificacion(piloto3, 2000)
+let calificacion4 = new Calificacion(piloto4, 4000)
+
+let listapilotos = [calificacion1,calificacion2,calificacion3,calificacion4]
+console.log(calificacion1.piloto.nombre)
 
 /* Esto lo hacemos cando usamos clave valor
 let ordenarTiempo = (lista) =>{
@@ -50,18 +56,20 @@ let ordenarNombre = (lista) =>{
 //sesion de calificacion en caso de que no exista el piloto
 
 let anyadirPiloto = (array, piloto, tiempo) => {
-
     for (let persona of array){
-        if (persona.piloto.nombre =! piloto.nombre){
+        if (persona.piloto.nombre != piloto.nombre){
+
             array.push(new Calificacion(piloto, tiempo))
-        } else if (persona.piloto.nombre == piloto.nombre) {
+
+        }else if (persona.piloto.nombre == piloto.nombre) {
+            console.log("encontrado")
             if (persona.tiempo > tiempo){
                 persona.tiempo = tiempo
             }
         }
-        return array
+        
     }
-    
+    return array
 }
 
 let anyadirPiloto2 = (array, piloto, tiempo) => {
@@ -70,6 +78,7 @@ let anyadirPiloto2 = (array, piloto, tiempo) => {
     for (let persona of array) {
         if (persona.piloto.nombre == piloto.nombre) {
             encontrado = true;
+            console.log("encontrado")
             if (persona.tiempo > tiempo) {
                 persona.tiempo = tiempo;
             }
@@ -84,6 +93,6 @@ let anyadirPiloto2 = (array, piloto, tiempo) => {
     return array;
 };
 
-
-console.log(anyadirPiloto2(listapilotos, {nombre: "Alvaro", escuderia: "Ferrari"}, 200))
+let piloto5 = new Piloto("Alvaro", "Alpine")
+console.log(anyadirPiloto(listapilotos, piloto5, 200))
 
