@@ -113,6 +113,19 @@ console.log(er.test(cadena))
 
 /*
 8. Realizar un programa que compruebe si una palabra es palíndromo, es decir, si se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo: RADAR, ARA....
+
+
+function esPalindromo(palabra) {
+  // Convertir la palabra a minúsculas y eliminar espacios en blanco
+  const palabraProcesada = palabra.toLowerCase().replace(/\s/g, '');
+  
+  // Revertir la palabra
+  const palabraRevertida = palabraProcesada.split('').reverse().join('');
+  
+  // Verificar si la palabra original es igual a la palabra revertida
+  return palabraProcesada === palabraRevertida;
+}
+
 */
 
 
@@ -317,6 +330,16 @@ if (fecha1 > fecha2) {
 3. Realiza un algoritmo que solicite del usuario un tiempo dado en segundos y calcule y presente en pantalla dicho tiempo pero expresado en horas, minutos y segundos.
 */
 /*
+
+function convertirTiempo(segundos) {
+  const horas = Math.floor(segundos / 3600);
+  const minutos = Math.floor((segundos % 3600) / 60);
+  const segs = segundos % 60;
+
+  return { horas, minutos, segundos: segs };
+}
+
+
 var tiempo = prompt("escribe un tiempo en segundos")
 var segundos = parseInt(tiempo)
 var minutos = 
