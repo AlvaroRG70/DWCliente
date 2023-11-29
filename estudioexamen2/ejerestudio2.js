@@ -1,3 +1,5 @@
+
+/*
 let solicitarNombreUsuario = () => {
     let nombreUsuario = prompt("Introduce un nombre de usuario con exactamente 7 caracteres:");
   
@@ -27,3 +29,18 @@ let solicitarNombreUsuario = () => {
 
 
   solicitarNombreUsuario()
+  */
+var alias = '@arodgar123'
+const patron = /^@([a-zA-Z])([a-zA-Z]{3})([a-zA-Z]{3})(\d{3})$/;
+const match = alias.match(patron);
+console.log(match)
+if (match) {
+  const primeraLetra = match[1].toLowerCase();
+  const primeraApellido = match[2].toLowerCase();
+  const segundoApellido = match[3].toLowerCase();
+  const digitosDNI = match[4];
+
+  console.log('@${primeraLetra}_${primeraApellido}_${segundoApellido}_${digitosDNI}')
+}
+
+
