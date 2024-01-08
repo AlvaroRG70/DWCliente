@@ -15,6 +15,8 @@ Si la fecha dada ha pasado ya, se informará al usuario, y terminará el program
 
 
 */
+
+
 let fecha1 = new Date("2023/10/01")
 console.log(fecha1)
 let cuentaAtras = (fecha, tiempo) => {
@@ -84,3 +86,4 @@ let cuentaAtras2 = (fechacadena, tiempo) => {
 }
 
 console.log(cuentaAtras(fecha1,60))
+

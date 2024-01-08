@@ -6,7 +6,7 @@ class CitaPrevia{
     }
 
     imprimirCita(){
-        let cadena = this.fecha.imprimirFecha() + ", " + this.paciente.imprimirPaciente() + ", " + this.medico.imprimirMedico()
+        let cadena = 'fecha: '+this.fecha.imprimirFecha() + ", " + 'paciente: '+ this.paciente.imprimirPaciente() + ", " + 'medico: ' +this.medico.imprimirMedico()
         return cadena
     }
 }

@@ -52,6 +52,7 @@ let eliminarCita = (lista, citanueva) => {
         return cadena
     }
 }
+
 let listacitas3 = [cita1, cita3, cita2]
 let listacitas4 = [cita1, cita3]
 
@@ -67,7 +68,7 @@ console.log(buscarCita(listacitas3, "alvaro"))
 
 let mostratCitas = (lista) => {
     for (let cita of lista) {
-        console.log(cita.imprimirCita())
+        document.write(cita.imprimirCita() + '<br>')
     }   
 }
 
@@ -77,6 +78,7 @@ let ordenaCitasPorFechaHora = (lista) => {
     let listaordenada = lista.sort((citaA, citaB) => citaA.fecha - citaB.fecha)
     return listaordenada
 }
+
 
 
 /*
