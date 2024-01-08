@@ -43,4 +43,8 @@ if (match) {
   console.log('@${primeraLetra}_${primeraApellido}_${segundoApellido}_${digitosDNI}')
 }
 */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26d0076444e2fa0020db1526390c80356c74d680
 
