@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #div1, #div2 {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      position: absolute;
+      cursor: grab;
+    }
+
+    #div2 {
+      left: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="div1" onmousedown="startDragging(event)"></div>
+<div id="div2" onmouseup="stopDragging()"></div>
+
+<script>
+  var isDragging = false;
+
+  function startDragging(event) {
+    isDragging = true;
+    document.addEventListener('mousemove', drag);
+  }
+
+  function stopDragging() {
+    isDragging = false;
+    document.removeEventListener('mousemove', drag);
+  }
+
+  function drag(event) {
+    if (isDragging) {
+      var div1 = document.getElementById('div1');
+      div1.style.left = (event.clientX - div1.clientWidth / 2) + "px";
+      div1.style.top = (event.clientY - div1.clientHeight / 2) + "px";
+    }
+  }
+</script>
+
+</body>
+</html>

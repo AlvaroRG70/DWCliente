@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mostrar Atributos</title>
+  <script>
+    function mostrarAtributos() {
+      for (var x = 0; x < document.getElementById("apellidos").attributes.length; x++) {
+        var atributo = document.getElementById("apellidos").attributes[x];
+        document.write(atributo.nodeName + " -> " + atributo.nodeValue + "<br/>");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Mostrar Atributos de un Elemento</h1>
+  <div id="apellidos" apellido1="González" apellido2="Pérez"></div>
+  <button onclick="mostrarAtributos()">Mostrar Atributos</button>
+</body>
+</html>
