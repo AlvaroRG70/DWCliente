@@ -60,8 +60,8 @@ function inicializar() {
 
 
     let imagenes = document.getElementsByTagName('img')
-    for (let img in imagenes){
-        imagenes[img].addEventListener('click',ocultar)
+    for (let img of imagenes){
+        img.addEventListener('click',ocultar)
     }
     
     function ocultar(e){

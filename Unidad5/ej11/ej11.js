@@ -8,14 +8,18 @@ function inicializar() {
     pss1.addEventListener('blur', vacia)
     pss2.addEventListener('blur', vacia)
 
+    let div = document.getElementById('algo')
 
     function vacia(e){
 
         if (e.currentTarget.value == ''){
-
-            alert('el campo no puede estar vacio')
+            
+            div.innerHTML = 'mal'
+            //alert('el campo no puede estar vacio')
             e.currentTarget.focus()     
 
+        } else {
+            div.innerHTML = ''
         }
     }
 

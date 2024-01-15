@@ -9,7 +9,7 @@ function inicializar() {
 
     function validar() {
 
-        let nombre = document.getElementById('nombre').value;
+        let nombre = document.getElementById('nombre1');
         let apellidos = document.getElementById('apellidos').value;
         let usuario = document.getElementById('usuario').value;
         let contrasena = document.getElementById('contrasena').value;
@@ -17,11 +17,11 @@ function inicializar() {
         let regexMov = /\d{9}/
         let email = document.getElementById('email').value;
         let regexpEm = /\w+\@gmail.com$/
+        
 
-        if (nombre.length < 3 || apellidos.length < 3 || usuario.length < 3){
-            alert('Nombre y apellidos deben tener al menos 3 caracteres.')
-            return
-        }
+       
+        
+       
 
         if (contrasena.length < 8){
             alert('contraseña debe tener al menos 8 caracteres.')
@@ -38,7 +38,7 @@ function inicializar() {
             return
         }
 
-        alert('Formulario validado correctamente. Puedes enviarlo.')
+        
         formulario.submit()
     }
     
@@ -50,6 +50,24 @@ function inicializar() {
         }
     }
     
+    let p = document.createElement('p')
+    var nombre = document.getElementById('nombre1');
+    function validarNombre() {
+        
+
+        if (nombre.value.length < 3){
+            p.style.display = 'block'
+            p.innerHTML = 'Nombre y apellidos deben tener al menos 3 caracteres.'
+            nombre.insertAdjacentElement('afterend', p)
+    
+            return
+
+        } else {
+            p.style.display = 'none'
+            p.innerHTML = ''
+        }
+    }
+    nombre.addEventListener('blur', validarNombre)
     document.getElementById('reseteo').addEventListener('click',resetear)
 
 

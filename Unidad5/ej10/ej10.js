@@ -60,7 +60,7 @@ function inicializar() {
         }
     }
 
-    nombre.addEventListener('input', validarNombre)
+    nombre.addEventListener('blur', validarNombre)
     apellidos.addEventListener('input', validarApelli)
     usuario.addEventListener('input', validarUsuario)
     contrasena.addEventListener('input', validarContra)
