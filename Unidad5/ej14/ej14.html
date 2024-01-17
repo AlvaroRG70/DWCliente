@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Café</title>
+    <script type="text/javascript" src="ej14.js"></script>
+</head>
+<body>
+
+    <h1>Formulario de Café</h1>
+
+    <form id="formularioCafe">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="habitacion">Número de Habitación:</label>
+        <input type="text" id="habitacion" name="habitacion" required>
+
+        <label>Selecciona tu tipo de café favorito:</label>
+        <input type="checkbox" id="espresso" name="cafe" value="Espresso">
+        <label for="espresso">Espresso</label>
+
+        <input type="checkbox" id="cappuccino" name="cafe" value="Cappuccino">
+        <label for="cappuccino">Cappuccino</label>
+
+        <input type="checkbox" id="moka" name="cafe" value="Moka">
+        <label for="moka">Moka</label>
+
+        <!-- Agrega más tipos de café según sea necesario -->
+
+        <button type="button" onclick="enviarPedido()">Enviar Pedido</button>
+    </form>
+
+</body>
+</html>
