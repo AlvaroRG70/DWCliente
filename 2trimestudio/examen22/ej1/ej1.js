@@ -77,7 +77,4 @@ function inicializar() {
             h4.style.display = 'none'
         }
     }
-    
-
-
 }

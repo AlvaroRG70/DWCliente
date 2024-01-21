@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastrar y Copiar</title>
+    <style>
+        .contenedor {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 150px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        .contenedor p {
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor" id="contenedor1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p draggable="true" ondragstart="drag(event)">Elemento a Copiar</p>
+    </div>
+
+    <div class="contenedor" id="contenedor2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <!-- Este contenedor estará vacío inicialmente -->
+    </div>
+
+    <script src="ej15.js"></script>
+</body>
+</html>

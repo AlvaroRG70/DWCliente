@@ -60,21 +60,26 @@ function inicializar() {
         const preferenciasUsuario = {
             texto: texto.value
         };
-    
-        // Convertir el objeto a JSON y guardarlo en localStorage
-        localStorage.setItem("preferenciasUsuario", JSON.stringify(preferenciasUsuario));
+
+        // Convertir el objeto a JSON y guardar como cookie
+        document.cookie = "preferenciasUsuario=" + JSON.stringify(preferenciasUsuario) + "; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
+        
     }
 
     function cargarPreferencias() {
-        // Obtener preferencias del usuario desde localStorage
-        const preferenciasUsuario = localStorage.getItem("preferenciasUsuario");
-    
-        if (preferenciasUsuario) {
-            // Convertir la cadena JSON de nuevo a un objeto
-            const preferenciasObjeto = JSON.parse(preferenciasUsuario);
-    
-            // Mostrar un mensaje con las preferencias almacenadas
-            alert(`Hola ${preferenciasObjeto.texto}!`);
+        // Obtener preferencias del usuario desde las cookies
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith("preferenciasUsuario=")) {
+                // Obtener el valor de la cookie y convertirlo a un objeto
+                const preferenciasObjeto = JSON.parse(cookie.substring("preferenciasUsuario=".length, cookie.length));
+                console.log(preferenciasObjeto);
+
+                // Mostrar un mensaje con las preferencias almacenadas
+                alert(`Hola ${preferenciasObjeto.texto}!`);
+                break; // Solo se necesita la primera cookie que cumple con la condición
+            }
         }
     }
 
@@ -83,3 +88,6 @@ function inicializar() {
 
 
 }
+
+
+

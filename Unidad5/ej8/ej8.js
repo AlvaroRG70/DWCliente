@@ -10,13 +10,15 @@ function inicializar() {
     function validar() {
 
         let nombre = document.getElementById('nombre1');
+        
         let apellidos = document.getElementById('apellidos').value;
         let usuario = document.getElementById('usuario').value;
         let contrasena = document.getElementById('contrasena').value;
         let movil = document.getElementById('movil').value;
         let regexMov = /\d{9}/
         let email = document.getElementById('email').value;
-        let regexpEm = /\w+\@gmail.com$/
+        let regexpEm = /\w+\@gmail\.com$/
+        
         
 
        
@@ -28,12 +30,12 @@ function inicializar() {
             return
         }
 
-        if (regexMov.test(movil)){
-            alert('Numero debe tener 8 caracteres.')
+        if (!regexMov.test(movil)){
+            alert('Numero debe tener 9 caracteres.')
             return
         }
 
-        if (regexpEm.test(email)){
+        if (!regexpEm.test(email)){
             alert('Debe ser un email válido.')
             return
         }
@@ -52,6 +54,7 @@ function inicializar() {
     
     let p = document.createElement('p')
     var nombre = document.getElementById('nombre1');
+    
     function validarNombre() {
         
 
@@ -67,6 +70,7 @@ function inicializar() {
             p.innerHTML = ''
         }
     }
+
     nombre.addEventListener('blur', validarNombre)
     document.getElementById('reseteo').addEventListener('click',resetear)
 

@@ -50,11 +50,11 @@ function inicializar() {
         let anyadirDsp = document.createElement('li')
         let txtDsp = document.createTextNode('contengo los modelos con la palabra')
         anyadirDsp.appendChild(txtDsp)
-        for (let i in lista){
-            console.log(lista[i].textContent)
-            if (lista[i].textContent.includes('BMW')){
-                lista[i].insertAdjacentElement('beforebegin',anyadirAntes)
-                lista[i].insertAdjacentElement('afterend',anyadirDsp)
+        for (let i of lista){
+            console.log(i.textContent)
+            if (i.textContent.includes('BMW')){
+                i.insertAdjacentElement('beforebegin',anyadirAntes)
+                i.insertAdjacentElement('afterend',anyadirDsp)
             }
         }
     }

@@ -51,22 +51,41 @@ function inicializar() {
     
             ul.appendChild(li)
     
-    
-    
         }
     }
+
     crearHTML()
 
 
 
     let imagenes = document.getElementsByTagName('img')
+    console.log(imagenes)
+
     for (let img of imagenes){
         img.addEventListener('click',ocultar)
     }
     
     function ocultar(e){
+
         let imagenPulsada = e.currentTarget
+        console.log(imagenPulsada)
+
+        let padre = imagenPulsada.parentNode
         
+        let listaHijos = [...padre.childNodes].filter((a) => a != imagenPulsada)
+
+        console.log(listaHijos)
+
+        for (let hermano of listaHijos){
+
+            if (hermano.getAttribute('hidden')){
+                hermano.removeAttribute('hidden')
+            } else{
+                hermano.setAttribute('hidden',true)
+            }
+        }
+
+
         let hermana1 = imagenPulsada.nextElementSibling
         let hermana2 = hermana1.nextElementSibling
 
@@ -78,7 +97,6 @@ function inicializar() {
             hermana2.setAttribute('hidden',true) 
         }
 
-        
     }
         
 }

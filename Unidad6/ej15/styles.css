@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contenedor {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 150px;
+    height: 200px;
+}

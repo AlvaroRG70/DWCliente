@@ -9,7 +9,7 @@ function inicializar() {
     let usuario = document.getElementById('usuario')
     let contrasena = document.getElementById('contrasena')
     let movil = document.getElementById('movil')
-    let regexMov = /\d{9}/
+    let regexMov = /^\d{9}$/
     let email = document.getElementById('email')
     let regexpEm = /\w+\@gmail\.com$/
     let p = document.createElement('p')
@@ -76,7 +76,7 @@ function inicializar() {
         if (!regexMov.test(movil.value)){
 
             p.style.display = 'block'
-            p.innerHTML= 'Numero debe tener 8 caracteres.'
+            p.innerHTML= 'Numero debe tener 9 caracteres.'
             movil.insertAdjacentElement('afterend', p)
             return
 

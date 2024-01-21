@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contenedor {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 150px;
+    height: 200px;
+}
+
+.papelera {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}

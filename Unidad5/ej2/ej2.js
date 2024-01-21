@@ -19,6 +19,7 @@ function inicializar() {
     function mostrarDatos() {
         let elementosFormulario = document.getElementById("formulario").elements
         var mensaje = ''
+        console.log(elementosFormulario)
         for (var i = 0; i < elementosFormulario.length; i++){
             var elemento = elementosFormulario[i]
             if (elemento.tagName == 'INPUT' && elemento.type != 'button'){
@@ -40,8 +41,8 @@ function inicializar() {
     
     function calcularEdad() {
 
-        let elementoFecha = document.getElementById("fechaNac").value
-        let fechaEdad = new Date(elementoFecha)
+        let elementoFecha = document.getElementById("fechaNac")
+        let fechaEdad = new Date(elementoFecha.value)
         let fechaHoy = new Date()
         let edadMseg = fechaHoy - fechaEdad
         let edad = Math.floor(edadMseg/(1000*60*60*24*365))

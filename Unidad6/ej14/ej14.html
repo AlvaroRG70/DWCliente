@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastrar y Soltar</title>
+    <script src="ej14.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor" id="contenedor1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p draggable="true" ondragstart="drag(event)">Elemento 1</p>
+        <p draggable="true" ondragstart="drag(event)">Elemento 2</p>
+        <p draggable="true" ondragstart="drag(event)">Elemento 3</p>
+    </div>
+
+    <div class="contenedor" id="contenedor2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <!-- Este contenedor estará vacío inicialmente -->
+    </div>
+
+    <div class="papelera" id="papelera" ondrop="eliminarElemento(event)" ondragover="allowDrop(event)">
+        Papelera
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
