@@ -34,7 +34,7 @@ function inicializar() {
         p.appendChild(br4)
         
         let em = document.createElement('em')
-        let txt2 = document.createTextNode(dichos[numero])
+        let txt2 = document.createTextNode(dichos[º])
         em.appendChild(txt2)
 
         p.appendChild(em)
