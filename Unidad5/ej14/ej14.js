@@ -57,3 +57,10 @@ function obtenerFechaExpiracion() {
 
     return expiracion.toUTCString();
 }
+
+
+
+
+
+
+
