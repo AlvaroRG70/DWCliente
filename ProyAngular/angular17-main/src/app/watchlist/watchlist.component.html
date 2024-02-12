@@ -17,12 +17,12 @@
             <p>{{ movie.overview }}</p>
             <p>Puntuación: {{ (movie.vote_average * 10).toFixed(2) }}</p>
             <p>Fecha de lanzamiento: {{movie.release_date}}</p>
-            <p>Director: {{ movie.director }}</p>
-            <p>Género:</p>
-                <ul>
-                <li *ngFor="let genre of movie.genre">{{ genre }}</li>
-                </ul>
-            <p>Actores: {{movie.cast}}</p>
+
+  
+
+            <a href="/film/{{movie.id}}" class="btn btn-primary bg-dark">Ver más</a>
+
+            
           </div>
         </div>
       </div>
