@@ -27,4 +27,11 @@ export class PeliculasService {
     const url = `${this.apiUrl}/${movie_id}?api_key=${this.apiKey}`;
     return this.http.get(url);
   }
+
+  buscarPeliculas(query: string) {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${query}&language=es`;
+    return this.http.get(url);
+  }
 }
+
+
