@@ -22,7 +22,14 @@
               </ul>
             
             <p>Título original: {{movie.original_language}}</p>
-            <a href="home" class="btn btn-primary bg-dark">Volver</a>
+            <div class="mt-4">
+              <!-- Botón para añadir a la watchlist -->
+              <button class="btn btn-primary mr-3" (click)="addToWatchlist()">Añadir a Watchlist</button>
+              <!-- Botón para eliminar de la watchlist -->
+              <button class="btn btn-danger" (click)="deleteToWatchlist()">Eliminar de Watchlist</button>
+              <!-- Botón para volver -->
+              <a href="home" class="btn btn-primary bg-dark ml-3">Volver</a>
+            </div>
 
           </div>
         </div>

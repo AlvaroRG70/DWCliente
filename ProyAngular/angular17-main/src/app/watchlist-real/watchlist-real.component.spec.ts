@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmpleadoComponent } from './empleado.component';
+import { WatchlistRealComponent } from './watchlist-real.component';
 
-describe('EmpleadoComponent', () => {
-  let component: EmpleadoComponent;
-  let fixture: ComponentFixture<EmpleadoComponent>;
+describe('WatchlistRealComponent', () => {
+  let component: WatchlistRealComponent;
+  let fixture: ComponentFixture<WatchlistRealComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EmpleadoComponent]
+      declarations: [WatchlistRealComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EmpleadoComponent);
+    fixture = TestBed.createComponent(WatchlistRealComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

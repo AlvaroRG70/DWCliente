@@ -24,7 +24,7 @@ export class PeliculasService {
   }
 
   getFilm(movie_id: number) {
-    const url = `${this.apiUrl}/${movie_id}?api_key=${this.apiKey}`;
+    const url = `${this.apiUrl}/${movie_id}?api_key=${this.apiKey}&append_to_response=watch/providers,credits,reviews,videos,recommendations`;
     return this.http.get(url);
   }
 
