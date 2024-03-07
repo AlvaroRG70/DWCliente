@@ -11,9 +11,6 @@
           <a class="nav-link" href="watchlist">Películas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="buscador">Buscar</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="w-real">Watchlist</a>
         </li>
         <li class="nav-item">
@@ -21,11 +18,14 @@
         </li>
         
       </ul>
-      <!-- <div class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" >
-        <a class="btn btn-primary btn-outline-success ml-2" routerLink="/buscador">Ir al buscador</a> 
-      </div> -->
-      
+
+      <div class="d-flex">
+        <form class="d-flex" (submit)="buscar()">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="peliculaId" name="searchTerm">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+
       
     </div>
   </div>

@@ -9,14 +9,30 @@ import { PeliculasService } from '../services/peliculas.service';
 })
 
 export class BuscadorComponent {
-  query: string = '';
+  
   peliculas: any[] = [];
+  peliculasId!: string;
 
   constructor(private peliculasService: PeliculasService) { }
 
-  buscarPeliculas(): void {
-    if (this.query.trim()) {
-      this.peliculasService.buscarPeliculas(this.query).subscribe(
+  ngOnInit(): void {
+    this.peliculasId = this.peliculasService.peliculaId;
+    this.buscarPeliculas(this.peliculasId); 
+  }
+
+
+  ngDoCheck () {
+    if(this.peliculasId != this.peliculasService.peliculaId){
+      this.peliculasId = this.peliculasService.peliculaId;
+      this.buscarPeliculas(this.peliculasId);
+    }
+  }
+
+
+
+  buscarPeliculas(query: string): void {
+    if (query.trim()) {
+      this.peliculasService.buscarPeliculas(query).subscribe(
         (data: any) => {
           this.peliculas = data.results;
         },
@@ -26,5 +42,9 @@ export class BuscadorComponent {
       );
     }
   }
+
+
+
+
 }
 

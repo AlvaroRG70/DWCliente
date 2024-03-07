@@ -10,6 +10,7 @@ export class PeliculasService {
 
   private apiUrl = 'https://api.themoviedb.org/3/movie';
   private apiKey = '665eddc29536d1ffc4e5fdace47ae8c7';
+  peliculaId: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -32,6 +33,16 @@ export class PeliculasService {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${query}&language=es`;
     return this.http.get(url);
   }
+
+  setTerminoBusqueda(pelicula: string) {
+    this.peliculaId = pelicula;
+  }
+
+  getTerminoBusqueda() {
+    return this.peliculaId;
+  }
+
+
 }
 
 
